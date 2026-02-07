@@ -4,3 +4,6 @@ langchain-google-genai
 python-dotenv
 sqlalchemy
 pyodbc
+fastapi
+uvicorn
+botbuilder-core
