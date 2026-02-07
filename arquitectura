@@ -2,7 +2,7 @@ project_root/
 │
 ├── main.py
 └── src/
-    ├── __init__.py      <-- Create this (empty file)
+    ├── __init__.py <-- Añade este archivo vacio
     ├── config.py
     ├── connection.py
     └── agent_logic.py
