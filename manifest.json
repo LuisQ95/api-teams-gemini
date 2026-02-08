@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "d13863b5-236b-4b4a-aa0f-0ee539038d9f",
+  "localizationInfo": {
+    "defaultLanguageTag": "es-es"
+  },
+  "developer": {
+    "name": "Luis Quispe - AI & Data Science",
+    "websiteUrl": "https://github.com/LuisQ95",
+    "privacyUrl": "https://github.com/LuisQ95/privacy",
+    "termsOfUseUrl": "https://github.com/LuisQ95/terms"
+  },
+  "name": {
+    "short": "AsistenteLogisticaMinera",
+    "full": "Asistente de Logística Minera"
+  },
+  "description": {
+    "short": "Agente IA para datos de flota minera",
+    "full": "Consulta ciclos de acarreo y estado de camiones usando lenguaje natural en español."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#004B87",
+  "bots": [
+    {
+      "botId": "d13863b5-236b-4b4a-aa0f-0ee539038d9f",
+      "scopes": ["personal"],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": ["*.ngrok-free.app"]
+}

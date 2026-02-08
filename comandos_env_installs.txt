@@ -1,0 +1,14 @@
+conda create --name m_agente_logistica python=3.11 -y
+conda activate m_agente_logistica
+
+# Instalar librerias
+pip install -r requirements.txt
+
+# Comando ngrok para obtener el URL (Forwarding)
+ngrok http 3978
+
+# Pagina Azure para cambiar el Forwarding
+https://portal.azure.com/#@luisquispe0205outlook.onmicrosoft.com/resource/subscriptions/d047be76-29d4-480d-9083-9c0cad998986/resourceGroups/Mining_Project_RG/providers/Microsoft.BotService/botServices/MiningLogisticsBot_Luis/config
+
+# Pagina del authaccount de ngrok
+https://dashboard.ngrok.com/get-started/your-authtoken

@@ -9,13 +9,15 @@ from botbuilder.core import (
 from botbuilder.schema import Activity
 from src.agent_logic import create_mining_agent
 from src.config import os
+from src.config import MS_APP_ID, MS_APP_PASSWORD, MS_APP_TYPE, MS_TENANT_ID
 
 app = FastAPI()
 
 # 1. Adapter Settings
 SETTINGS = BotFrameworkAdapterSettings(
-    os.getenv("MICROSOFT_APP_ID"), 
-    os.getenv("MICROSOFT_APP_PASSWORD")
+    app_id=MS_APP_ID,
+    app_password=MS_APP_PASSWORD,
+    channel_auth_tenant=MS_TENANT_ID # Use 'common' for multi-tenant
 )
 ADAPTER = BotFrameworkAdapter(SETTINGS)
 
