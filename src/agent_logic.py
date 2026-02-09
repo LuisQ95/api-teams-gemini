@@ -3,6 +3,21 @@ from langchain_community.agent_toolkits import create_sql_agent
 from src.config import GEMINI_API_KEY
 from src.connection import get_db_connection
 
+def limpiar_respuesta_gemini(raw_output):
+    """
+    Recorre la lista de salida de Gemini y une todos los fragmentos
+    de texto, ya sean diccionarios o cadenas simples.
+    """
+    if isinstance(raw_output, list):
+        texto_completo = ""
+        for parte in raw_output:
+            if isinstance(parte, dict) and "text" in parte:
+                texto_completo += parte["text"]
+            elif isinstance(parte, str):
+                texto_completo += parte
+        return texto_completo
+    return str(raw_output)
+
 def create_mining_agent():
     # Initialize Gemini
     llm = ChatGoogleGenerativeAI(

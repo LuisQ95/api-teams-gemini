@@ -1,4 +1,4 @@
-from src.agent_logic import create_mining_agent
+from src.agent_logic import create_mining_agent, limpiar_respuesta_gemini
 import time
 
 def ejecutar_agente_terminal():
@@ -22,10 +22,26 @@ def ejecutar_agente_terminal():
             # 2. Invocar al agente
             # Esto imita el comportamiento de on_message_activity en Teams
             respuesta = agent_executor.invoke({"input": consulta_usuario})
+
+            # Limpiar y concatenar la respuesta
+            texto_final = limpiar_respuesta_gemini(respuesta["output"])
+            
+            tiempo_fin = time.time()
+            raw_output = respuesta["output"]
+            if isinstance(raw_output, list) and len(raw_output) > 0 and "text" in raw_output[0]:
+                final_response = raw_output[0]["text"]
+            else:
+                final_response = raw_output
             
             tiempo_fin = time.time()
             
+            print("="*50)
+            print(f"\nBot: {texto_final}")
+            print("="*50)
+            print(f"\nBot: {final_response}")
+            print("="*50)
             print(f"\nBot: {respuesta['output']}")
+            print("="*50)
             print(f"--- (Tiempo de procesamiento: {tiempo_fin - tiempo_inicio:.2f}s) ---\n")
             
     except Exception as e:

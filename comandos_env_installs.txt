@@ -5,10 +5,12 @@ conda activate m_agente_logistica
 pip install -r requirements.txt
 
 # Comando ngrok para obtener el URL (Forwarding)
-ngrok http 3978
+ngrok http 3978 -> Este URL se necesitara cambiar en la pagina de Azure mostrada abajo para poder utilizarlo en un servicio de Microsoft
 
 # Pagina Azure para cambiar el Forwarding
 https://portal.azure.com/#@luisquispe0205outlook.onmicrosoft.com/resource/subscriptions/d047be76-29d4-480d-9083-9c0cad998986/resourceGroups/Mining_Project_RG/providers/Microsoft.BotService/botServices/MiningLogisticsBot_Luis/config
+
+https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationMenuBlade/~/Authentication/appId/d13863b5-236b-4b4a-aa0f-0ee539038d9f/isMSAApp~/false
 
 # Pagina del authaccount de ngrok
 https://dashboard.ngrok.com/get-started/your-authtoken
